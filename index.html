@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJdimas - Menu</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .menu-box {
+      background: #1f1f1f;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ccff;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #00ccff;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 16px;
+      background: #00ccff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00e6e6;
+    }
+    .mensagem {
+      background: #333;
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-box">
+    <h1>Bem-vindo ao AJdimas</h1>
+    <button class="btn" onclick="irParaLoja()">Entrar na Loja</button>
+    <button class="btn" onclick="mostrarOpcoesPreditor()">Ir para o PREDITOR</button>
+
+    <div id="mensagem" class="mensagem">
+      Para o PREDITOR funcionar com 100% de credibilidade, você deve criar uma nova conta usando esse link:
+    </div>
+    <div id="botoes-preditor" style="display: none;">
+      <button class="btn" onclick="criarConta()">CRIAR UMA CONTA</button>
+      <button class="btn" onclick="entrarPreditor()">ENTRAR NO PREDITOR</button>
+    </div>
+  </div>
+
+  <script>
+    function irParaLoja() {
+      window.location.href = "loja.html";
+    }
+
+    function mostrarOpcoesPreditor() {
+      document.getElementById('mensagem').style.display = "block";
+      document.getElementById('mensagem').innerHTML += `<br><a href='https://encurtador.com.br/lbCSe' style='color:#00ccff;'>https://encurtador.com.br/lbCSe</a>`;
+      document.getElementById('botoes-preditor').style.display = "block";
+    }
+
+    function criarConta() {
+      window.location.href = "https://encurtador.com.br/lbCSe";
+    }
+
+    function entrarPreditor() {
+      window.location.href = "https://minderads.netlify.app/";
+    }
+  </script>
+</body>
+</html>
